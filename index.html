@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c0e0c">
+  <meta name="description" content="LUDORA: descubre, comparte y explora los secretos de tus videojuegos favoritos.">
+  <title>LUDORA — Discover. Share. Play.</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="#">
+      <span class="logo">L</span>
+      LUDORA
+    </a>
+
+    <nav class="nav-links">
+      <a href="#discoveries">Descubrimientos</a>
+      <a href="#community">Comunidad</a>
+      <a href="#ranking">Clasificación</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn" id="loginBtn">Entrar</button>
+      <button class="btn primary" id="publishBtn">+ Publicar</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero container">
+  <div class="eyebrow">
+    <span class="dot"></span>
+    LA COMUNIDAD DESCUBRE PRIMERO
+  </div>
+
+  <h1>
+    Hay cosas que solo<br>
+    se encuentran <span>jugando.</span>
+  </h1>
+
+  <p class="hero-description">
+    Secretos, ubicaciones, vehículos y hallazgos compartidos
+    por jugadores. Explora lo que otros han descubierto y
+    aporta algo que nadie más ha visto.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#discoveries" class="btn primary">
+      Explorar descubrimientos ↗
+    </a>
+    <button class="btn" id="heroPublish">
+      Compartir un hallazgo
+    </button>
+  </div>
+
+  <div class="stats">
+    <div><strong id="postCount">03</strong><span>Descubrimientos</span></div>
+    <div><strong>01</strong><span>Universo activo</span></div>
+    <div><strong>100%</strong><span>Comunidad</span></div>
+  </div>
+</section>
+
+<section class="container discoveries" id="discoveries">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">DEL MAPA A LA COMUNIDAD</span>
+      <h2>Descubrimientos recientes</h2>
+      <p>Lo último que la comunidad ha puesto sobre la mesa.</p>
+    </div>
+  </div>
+
+  <div class="filters">
+    <button class="filter active" data-filter="Todos">Todo</button>
+    <button class="filter" data-filter="Secreto">Secretos</button>
+    <button class="filter" data-filter="Vehículo">Vehículos</button>
+    <button class="filter" data-filter="Misión">Misiones</button>
+    <button class="filter" data-filter="Coleccionable">Coleccionables</button>
+  </div>
+
+  <input
+    type="search"
+    id="searchInput"
+    class="search"
+    placeholder="Buscar descubrimientos..."
+  >
+
+  <div class="discovery-grid" id="discoveryGrid"></div>
+</section>
+
+<section class="container community" id="community">
+  <div class="community-banner">
+    <span class="eyebrow">TU HALLAZGO PUEDE SER EL SIGUIENTE</span>
+    <h2>La comunidad crece con cada descubrimiento.</h2>
+    <p>
+      Comparte cómo lo encontraste, añade la ubicación y
+      ayuda a otros jugadores a descubrirlo.
+    </p>
+    <button class="btn primary" id="communityPublish">
+      Publicar mi descubrimiento ↗
+    </button>
+  </div>
+
+  <aside class="ranking" id="ranking">
+    <h3>Jugadores destacados</h3>
+    <div class="rank-item">
+      <span>01</span><b>ViceHunter</b><strong>320 XP</strong>
+    </div>
+    <div class="rank-item">
+      <span>02</span><b>MapKeen</b><strong>245 XP</strong>
+    </div>
+    <div class="rank-item">
+      <span>03</span><b>L8Night</b><strong>180 XP</strong>
+    </div>
+    <small>Clasificación de demostración.</small>
+  </aside>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <strong>LUDORA</strong>
+    <span>Descubre. Comparte. Juega.</span>
+    <span>Proyecto independiente. No afiliado a Rockstar Games.</span>
+  </div>
+</footer>
+
+<!-- VENTANA DE PUBLICACIÓN -->
+<div class="modal" id="publishModal">
+  <div class="modal-content">
+    <button class="close" id="closeModal">×</button>
+    <h2>Comparte tu descubrimiento</h2>
+
+    <form id="publishForm">
+      <label for="title">Título</label>
+      <input id="title" required maxlength="70"
+        placeholder="¿Qué has descubierto?">
+
+      <label for="category">Categoría</label>
+      <select id="category">
+        <option>Secreto</option>
+        <option>Vehículo</option>
+        <option>Misión</option>
+        <option>Coleccionable</option>
+        <option>Otro</option>
+      </select>
+
+      <label for="location">Ubicación</label>
+      <input id="location" placeholder="Zona o coordenadas">
+
+      <label for="description">Descripción</label>
+      <textarea id="description" required
+        placeholder="Explica tu descubrimiento..."></textarea>
+
+      <label for="nickname">Tu apodo</label>
+      <input id="nickname" required maxlength="24"
+        placeholder="Nombre de jugador">
+
+      <button class="btn primary submit-btn" type="submit">
+        Enviar descubrimiento
+      </button>
+    </form>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
